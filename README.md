@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# RESTful API Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a RESTful API for managing a collection of books. It allows users to perform CRUD operations on book records via a React front-end interface and a Flask back-end service.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Create**: Add new book records to the database.
+- **Read**: Retrieve a list of all books or a single book by title, author, genre or price.
+- **Update**: Modify the details of an existing book.
+- **Delete**: Remove a book record from the database.
+- **Search**: Find books based on title, author, genre, or price.
 
-### `npm start`
+## Front-end
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Built with React, the front-end provides a user-friendly interface for interacting with the book records. It includes components for listing books, adding a new book, and updating or deleting existing books.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Back-end
 
-### `npm test`
+The back-end is a Flask application with a SQLite database. It defines RESTful routes to handle requests from the front-end and performs the necessary database operations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- npm (Node Package Manager)
+- Python 3
+- pip (Python Package Installer)
+- Virtualenv (optional for creating isolated Python environments)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installing
 
-### `npm run eject`
+A step-by-step series of examples that tell you how to get a development environment running.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Setting up the Back-end
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository to your local machine.
+2. Navigate to the `python` directory.
+3. Create a virtual environment (optional):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```sh
+   python -m venv book_env
+   ```
+4. Activate the virtual environment:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    On macOS and Linux:
+      ```sh
+      source book_env/bin/activate
+      ```
+    On Windows:
+      ```sh
+      .\book_env\Scripts\activate
+      ```
 
-## Learn More
+5. Install the required packages:
+  ```sh
+  pip install Flask Flask-SQLAlchemy
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. Start the Flask application:
+  ```sh
+  python app.py
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The back-end service will start on ```http://127.0.0.1:5000/```.
 
-### Code Splitting
+### Setting up the Front-end
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Navigate to the root directory of the project.
 
-### Analyzing the Bundle Size
+2. Install the dependencies:
+  ```sh
+  npm install
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Start the React application:
+  ```sh
+  npm start
+  ```
 
-### Making a Progressive Web App
+The front-end will start on http://localhost:3000/.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Built With
 
-### Advanced Configuration
+React - The web framework used for the front-end.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Flask - The web framework used for the back-end.
 
-### Deployment
+SQLite - The database engine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+SQLAlchemy - The ORM used.
